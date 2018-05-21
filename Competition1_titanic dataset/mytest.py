@@ -22,8 +22,8 @@ from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.ensemble import ExtraTreesClassifier
 
-train_dataset = read_csv("/Users/chitrasekar2k5/Desktop/Machine Learning/Kaggle submissions/train.csv",index_col = None, na_values = ['NA'])
-test_dataset = read_csv("/Users/chitrasekar2k5/Desktop/Machine Learning/Kaggle submissions/test.csv",index_col = None,na_values = ['NA'])
+train_dataset = read_csv("train.csv",index_col = None, na_values = ['NA'])
+test_dataset = read_csv("test.csv",index_col = None,na_values = ['NA'])
 
 test_pID = test_dataset['PassengerId']
 """target = train_dataset['Survived']"""
@@ -164,4 +164,4 @@ rescaledValidationX = scaler.transform(X_validation)
 predictions = model.predict(rescaledValidationX)
 print(predictions)
 result_titanic = pd.DataFrame(data = {'PassengerId':test_pID, 'Survived': predictions})
-result_titanic.to_csv('/Users/chitrasekar2k5/Desktop/Machine Learning/Kaggle submissions/titanic_results.csv',index = False)
+result_titanic.to_csv('titanic_results.csv',index = False)
